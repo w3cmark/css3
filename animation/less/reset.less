@@ -84,7 +84,16 @@ body, html {background:#eee;text-align: left;height: 100%;width: 100%;font-famil
     -ms-transform: translate3d(@x,@y,0);
     transform: translate3d(@x,@y,0);
 }
-
+//animation
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+            @{style}: @value;
+}
+.animation(@value){
+    .pre(animation,@value);
+}
 
 .animation-delay(@delay) {
     -webkit-animation-delay: @delay;
