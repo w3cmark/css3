@@ -95,18 +95,22 @@
 .spanclass{display: none;}
 
 
-
-    // .keyframes(fadeIndown);
-    // .-frames(@-...){
-    //     0%{
-    //         opacity:0;
-    //         .transform(translateY(-150px));
-    //     }
-    //     100%{
-    //         opacity:1;
-    //         .transform(translateY(0px));
-    //     }
-    // }
+&{
+	.keyframes(fadeIndown);
+    .-frames(@-...){
+        0%{
+            opacity:0;
+            .transform(translateY(-150px));
+            // @transform(translateY(-150px));
+        }
+        100%{
+            opacity:1;
+            .transform(translateY(0px));
+            // @transform(translateY(0px));
+        }
+    }
+}
+    
 
 .show-demo{
 	// position: relative;
