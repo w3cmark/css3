@@ -6,9 +6,19 @@
 <meta name="keywords" content="CSS3 animation by less" />
 <meta name="description" content="CSS3 animation by less" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/monokai_sublime.min.css">
+<link rel="stylesheet" href="css/monokai_sublime.min.css">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/common.less">
+<!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/flat-ui.css" rel="stylesheet">
+      <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="../dist/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../dist/js/vendor/video.js"></script>
+    <script src="../dist/js/flat-ui.min.js"></script>
 </head>
 <body>
 	<div class='header'><span class="header-logo">CSS3 animation</span></div>
@@ -24,9 +34,19 @@
 			<div class="show-box">
 				<div id="Janimate" class="show-demo"></div>
 			</div>
-			<p>在线演示</p>
+			<!-- <p>在线演示</p>
 			<div class="btn">
 				<a href="">淡入</a>
+			</div> -->
+			<div class="select">
+				<select value="X-Men" class="span3" tabindex="1" name="herolist">
+		            <option value="0">Choose hero</option>
+		            <option value="1">Spider Man</option>
+		            <option value="2">Wolverine</option>
+		            <option value="3">Captain America</option>
+		            <option value="X-Men" selected="selected">X-Men</option>
+		            <option value="Crocodile">Crocodile</option>
+		          </select>
 			</div>
 			<p>代码</p>
 			<div class="code">
