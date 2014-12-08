@@ -1,5 +1,7 @@
 @import "reset.less";
 @import "animation.less";
+// @import "http://git-wz.gz.netease.com/grp.wzj/test/raw/master/css/animation.less";
+
 .main{width:1200px;margin:0 auto;overflow: hidden;}
 .header{width: 100%;height:60px;background: #1f1f21;margin-bottom: 30px;}
 .header-logo{display: inline-block;height:60px;line-height: 60px;color:#fff;background: #FA7D3C;text-align: center;font-size: 26px;padding:0 15px;}
@@ -11,6 +13,8 @@
 	padding: 30px 15px 0;
 	background: #eee;
 	min-height:980px;
+	position:fixed;
+	top:0;
 	a{
 		display: block;
 		font-size: 15px;
@@ -30,23 +34,51 @@
 	width: 865px;
 	border-left: 1px solid #ccc;
 	background: #fff;
-	padding: 40px 50px;
-	p{
+	padding: 0 50px 40px;
+	h3{
 		height: 36px;
 		line-height: 36px;
-		font-size: 16px;
+		font-size: 18px;
 		border-left: 3px solid #FA7D3C;
 		background: #f2f2f2;
 		padding-left: 20px;
 		margin: 30px 0;
+		font-weight:normal;
 		color:#888;
+	}
+	h2{
+		font-size:20px;
+		color: #FA7D3C;
+		border-bottom:1px solid #f2f2f2;
+		padding-bottom: 15px;
+	}
+	h4{
+		font-size:16px;
+		margin:10px;
+	}
+	p{
+		line-height:24px;
+		font-size:14px;
+		margin:10px;
+	}
+}
+.m-dl{
+	font-size:14px;
+	line-height:20px;
+	margin-left: 10px;
+	border-left:5px solid #ddd;
+	background:rgba(102,128,153,.05);
+	padding:10px;
+	dd{
+		margin-left: 15px;
+		color:#555;
 	}
 }
 .show-box{
 	width: 750px;
 	height: 250px;
 	margin: 0 auto;
-	border: 1px dashed #ccc;
+	border: 1px dashed #fff;
 }
 .show-demo{
 	width: 500px;
@@ -93,7 +125,7 @@
 		padding-left: 10px;
 	}
 	code{
-		padding:10px;
+		// padding:10px;
 		word-break:break-all;
 		white-space:pre-wrap;
 		font-family:"Consolas";
@@ -430,5 +462,8 @@
 		&:hover{
 			background:#fa7d3c;
 		}
+	}
+	optgroup{
+		background:#f2f2f2;
 	}
 }

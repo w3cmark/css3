@@ -38,7 +38,7 @@
 .translate(@x,@y){
     .transform(translate(@x,@y));
 }
-.translate3d(@x,@y,@z) {
+.translate3d(@x,@y,@z){
     .transform(translate3d(@x,@y,@z));
 }
 .translateHardware(@x,@y) {
@@ -110,9 +110,6 @@
     filter:alpha(opacity=@number);
 }
 // border
-.box-shadow(@arg){
-    .pre(box-shadow,@arg);
-}
 .border-color(@arg){
     .pre(border-color,@arg);
 }
@@ -133,6 +130,9 @@
     .pre(background-size,@arg);
 }
 //box
+.box-shadow(@arg){
+    .pre(box-shadow,@arg);
+}
 .box-sizing(@arg){
     .pre(box-sizing,@arg);
 }
