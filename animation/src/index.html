@@ -11,13 +11,22 @@
 <link rel="stylesheet" type="text/css" href="css/common.less">
 </head>
 <body>
-	<div class='header'><span class="header-logo">CSS3 animation</span></div>
+  <div class="nav">
+    <div class="nav-a">
+      <a href="#xgyl">效果预览</a>
+      <a href="#prefixer">LESS-Prefixer</a>
+      <a href="#animation">LESS-animation</a>
+    </div>
+  </div>
+	<div class='header'>
+    CSS3 Animation <span>— 66种</span>
+    <p>基于 less 构建的 css3 动画库</p>
+    <div class="header-btn">
+      <a href="">下载</a>
+    </div>
+    
+  </div>
 	<div id="main" class="main">
-		<div class="layA">
-			<a href="#xgyl">效果预览</a>
-      <a href="#syff">使用方法</a>
-		</div>
-		<div class="layBC">
       <h2 id="xgyl">效果预览</h2>
 			<div class="show-box">
 				<div id="Janimate" class="show-demo"></div>
@@ -153,15 +162,34 @@ body, .usertext {
 }
 </code></pre>
 			</div>
-
-      <h2 id="syff">使用方法</h2>
-      <!-- <p>优先推荐使用less，第一，less采用mixins(混入)写法，编译后css只会生成你使用的那部分mixins；第二，less版有两个功能：LESS-Prefixer 和LESS-animation。</p> -->
-      <h3>LESS-Prefixer</h3>
       
+      <h2>LESS动画优点</h2>
+      <p><span class="s_icon">·</span> 快速开发css3动画</p>
+      <p><span class="s_icon">·</span> 采用less mixins写法，不会生成冗余css</p>
+      <p><span class="s_icon">·</span> 已加入主流浏览器前缀，保证最大兼容性</p>
+
+      <h2>使用方法</h2>
+      <!-- <p>优先推荐使用less，第一，less采用mixins(混入)写法，编译后css只会生成你使用的那部分mixins；第二，less版有两个功能：LESS-Prefixer 和LESS-animation。</p> -->
+
+      <p><span class="s_icon">·</span> 下载 animation.less 文件，git地址：</p>
+      <div class="code">
+      <pre>
+<code class="less">git@git-wz.gz.netease.com:nie-comm/model-fo-topic.git
+</code></pre>
+      </div>
+
+      <p><span class="s_icon">·</span> 在主less文件引入animation.less</p>
+      <div class="code">
+      <pre>
+<code class="less">@import "animation.less";
+</code></pre>
+      </div>
+
+      <h3 id="prefixer">LESS-Prefixer</h3>
       <!-- <h4>LESS-Prefixer</h4> -->
-      <p>LESS-Prefixer是一组LESS mixins，可以让你在写css3时，去掉书写各个浏览器的前缀。</p>
+      <p>LESS-Prefixer是一组LESS mixins，可以让你在写css3时，去掉书写各个浏览器的前缀，简化代码书写。</p>
       <h4>如何使用</h4>
-      <p>· 假如你写css3的transition：</p>
+      <p><span class="s_icon">·</span> 假如你写css3的transition：</p>
       <div class="code">
       <pre>
 <code class="less">div{
@@ -173,7 +201,7 @@ body, .usertext {
 }
 </code></pre>
       </div>
-      <p>· 引入less前缀库后的写法：</p>
+      <p><span class="s_icon">·</span> 引入 animation.less 后的写法：</p>
       <div class="code">
       <pre>
 <code class="less">div{
@@ -250,14 +278,34 @@ body, .usertext {
         <dd class="-dd">.linear-gradient-left(@default,@color1,@stop1,@color2,@stop2,@color3,@stop3,@color4,@stop4)</dd>
       </dl>
 
-      <h3>LESS-animation</h3>
+      <h3 id="animation">LESS-animation</h3>
+      <p>LESS-animation 是一个基于less，集成一些基础动画的库（所包含的动画可以在上面效果预览），直接调用相应的动画mixins即可。</p>
+      <p>动画帧名和mixin名一致，方便调用。</p>
+      <p><span class="s_icon">·</span> 栗子一：引用 bounce 动画，只需在所在元素节点加入 .bounce();</p>
+      <div class="code">
+      <pre>
+<code class="less">.bounce{
+  .bounce();
+  .animation(bounce 1s ease-in-out);
+}
+</code></pre>
+      </div>
 
-		</div>
+      <p><span class="s_icon">·</span> 栗子二：引用 bounceIn 动画，只需在所在元素节点加入 .bounceIn();</p>
+      <div class="code">
+      <pre>
+<code class="less">.box{
+  .bounceIn();
+  .animation(bounceIn 1s linear infinite);
+}
+</code></pre>
+      </div>
 
+      <p class="cankao">参考：https://github.com/daneden/animate.css</p>
 		
 	</div>
 
-<div class="footer"> Powered by <a href="javascript:;" href="http://www.w3cmark.com">w3cmark.com</a></div>
+<div class="footer"> Powered by 小军</div>
 <script src="http://www.w3cmark.com/tools/js/jquery-1.11.0.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
