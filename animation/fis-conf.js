@@ -1,12 +1,12 @@
 <!--param start-->
     //修改cdn的绝对路径（测试环境）
-    fis.config.set('cdn-path','http://cms.netease.com:7111/test11/sm_ydgw_20141201');
+    fis.config.set('cdn-path','http://www.w3cmark.com/animation');
     //修改cdn的绝对路径（正式环境）
-    fis.config.set('cdn-path-release','http://res.sm.netease.com/gw/14v2/m');
+    fis.config.set('cdn-path-release','http://www.w3cmark.com/animation');
     //修改雪碧图放大缩小倍数，默认是1，iphone是0.5
     fis.config.set('css-scale',1);
     //修改include文件的域名
-    fis.config.set('include-host','http://sm.163.com')
+    fis.config.set('include-host','http://www.w3cmark.com/')
 
     fis.config.set('pack', {
         'pkg/lib.js': [
