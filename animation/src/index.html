@@ -13,9 +13,9 @@
 <body>
   <div class="nav">
     <div class="nav-a">
-      <a href="#xgyl">效果预览</a>
-      <a href="#prefixer">LESS-Prefixer</a>
-      <a href="#animation">LESS-animation</a>
+      <a href="#0">效果预览</a>
+      <a href="#1">LESS-Prefixer</a>
+      <a href="#2">LESS-animation</a>
     </div>
   </div>
 	<div class='header'>
@@ -27,7 +27,7 @@
     
   </div>
 	<div id="main" class="main">
-      <h2 id="xgyl">效果预览</h2>
+      <h2 class="main-wrap0">效果预览</h2>
 			<div class="show-box">
 				<div id="Janimate" class="show-demo"></div>
 			</div>
@@ -155,7 +155,7 @@
           </select>
           <a class="select-btn" href="javascript:;">Animate it</a>
 			</div>
-			<h3>代码</h3>
+<!-- 			<h3>代码</h3>
 			<div class="code">
 					CSS
 					<pre>
@@ -175,7 +175,7 @@ body, .usertext {
   }
 }
 </code></pre>
-			</div>
+			</div> -->
       
       <h2>LESS动画优点</h2>
       <p><span class="s_icon">·</span> 快速开发css3动画</p>
@@ -199,7 +199,7 @@ body, .usertext {
 </code></pre>
       </div>
 
-      <h3 id="prefixer">LESS-Prefixer</h3>
+      <h3 id="prefixer" class="main-wrap1">LESS-Prefixer</h3>
       <!-- <h4>LESS-Prefixer</h4> -->
       <p>LESS-Prefixer是一组LESS mixins，可以让你在写css3时，去掉书写各个浏览器的前缀，简化代码书写。</p>
       <h4>如何使用</h4>
@@ -292,7 +292,7 @@ body, .usertext {
         <dd class="-dd">.linear-gradient-left(@default,@color1,@stop1,@color2,@stop2,@color3,@stop3,@color4,@stop4)</dd>
       </dl>
 
-      <h3 id="animation">LESS-animation</h3>
+      <h3 id="animation" class="main-wrap2">LESS-animation</h3>
       <p>LESS-animation 是一个基于less，集成一些基础动画的库（所包含的动画可以在上面效果预览），直接调用相应的动画mixins即可。</p>
       <p>动画帧名和mixin名一致，方便调用。</p>
       <p><span class="s_icon">·</span> 栗子一：引用 bounce 动画，只需在所在元素节点加入 .bounce();</p>
@@ -322,12 +322,26 @@ body, .usertext {
 <div class="footer"> Powered by 小军</div>
 <script src="http://www.w3cmark.com/tools/js/jquery-1.11.0.min.js"></script>
 <script>
-    hljs.initHighlightingOnLoad();
-    function testAnim(x) {
+  hljs.initHighlightingOnLoad();
+  function testAnim(x) {
     $('#Janimate').removeClass().addClass(x + ' show-demo').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
       $(this).removeClass(x);
     });
   };
+  function scrollTo(name, add, speed) {//基于jq，根据dom元素的缓动锚点效果
+    if (!speed) speed = 300
+    if (!name) {
+        $('html,body').animate({
+            scrollTop: 0
+        }, speed)
+    } else {
+        if ($(name).length > 0) {
+            $('html,body').animate({
+                scrollTop: $(name).offset().top + (add || 0)
+            }, speed)
+        }
+    }
+  }
 
   $(document).ready(function(){
     $('.select-btn').click(function(e){
@@ -341,6 +355,19 @@ body, .usertext {
       testAnim(anim);
     });
   });
+  $('.nav-a a').bind('click',function(){
+    setTimeout(function(){
+      if( location.hash ){
+        var index = location.hash.split('#')[1];
+        console.log(index);
+        $('.nav-a a').removeClass('cur');
+        $('.nav-a a').eq(index).addClass('cur');
+        scrollTo( '.main-wrap'+index,-70);
+      }
+    },100)
+    
+  })
+  
 </script>
 </body>
 </html>

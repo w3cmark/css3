@@ -6,9 +6,15 @@
 
 期望功能
 
-+ 集成常用的css3动画效果
-+ 可以在线预览
-+ 可以在线复制css或者less
++ 快速开发css3动画
+
++ 采用less mixins写法，不会生成冗余css
+
++ 已加入主流浏览器前缀，保证最大兼容性
+
+效果预览
+
++ http://www.w3cmark.com/animation/
 
 Powered by http://www.w3cmark.com
 
