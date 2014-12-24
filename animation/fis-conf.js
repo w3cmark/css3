@@ -1,6 +1,6 @@
 <!--param start-->
     //修改cdn的绝对路径（测试环境）
-    fis.config.set('cdn-path','http://www.w3cmark.com/animation');
+    fis.config.set('cdn-path','http://w3cmark.github.io/animation');
     //修改cdn的绝对路径（正式环境）
     fis.config.set('cdn-path-release','http://www.w3cmark.com/animation');
     //修改雪碧图放大缩小倍数，默认是1，iphone是0.5
