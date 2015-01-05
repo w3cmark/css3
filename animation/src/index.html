@@ -19,7 +19,7 @@
     </div>
   </div>
 	<div class='header'>
-    CSS3 Animation <span>— 64种</span>
+    CSS3 Animation <span>— <em id="Jallnum"></em>种</span>
     <p>基于 less 构建的 css3 动画库</p>
     <div class="header-btn">
       <a href="https://github.com/w3cmark/css3/tree/master/animation/src/css" target="_blank">下载</a>
@@ -31,11 +31,9 @@
 			<div class="show-box">
 				<div id="Janimate" class="show-demo"></div>
 			</div>
-			<!-- <p>在线演示</p>
-			<div class="btn">
-				<a href="">淡入</a>
-			</div> -->
+
 			<div class="select">
+        <input id="Jselectname" class="selectname" disabled="true" value="bounce"></input>
 				<select id="Jselect">
             <optgroup label="Attention Seekers">
               <option value="bounce">bounce</option>
@@ -139,19 +137,19 @@
               <option value="zoomOutUp">zoomOutUp</option>
             </optgroup>
 
-            <!-- <optgroup label="Slide Entrances">
-              <option value="slideInDown">slideInDown</option>
-              <option value="slideInUp">slideInUp</option>
-              <option value="slideInLeft">slideInLeft</option>
-              <option value="slideInRight">slideInRight</option>
+            <optgroup label="turn Entrances">
+              <option value="turnInDown">turnInDown</option>
+              <option value="turnInUp">turnInUp</option>
+              <option value="turnInLeft">turnInLeft</option>
+              <option value="turnInRight">turnInRight</option>
             </optgroup>
 
-            <optgroup label="Slide Exits">
-              <option value="slideOutDown">slideOutDown</option>
-              <option value="slideOutUp">slideOutUp</option>
-              <option value="slideOutLeft">slideOutLeft</option>
-              <option value="slideOutRight">slideOutRight</option>
-            </optgroup> -->
+            <optgroup label="turn Exits">
+              <option value="turnOutDown">turnOutDown</option>
+              <option value="turnOutUp">turnOutUp</option>
+              <option value="turnOutLeft">turnOutLeft</option>
+              <option value="turnOutRight">turnOutRight</option>
+            </optgroup>
           </select>
           <a class="select-btn" href="javascript:;">Animate it</a>
 			</div>
@@ -324,11 +322,15 @@ body, .usertext {
 <script src="http://www.w3cmark.com/tools/js/jquery-1.11.0.min.js"></script>
 <script>
   hljs.initHighlightingOnLoad();
+  $('#Jallnum').html($('#Jselect option').length);
   function testAnim(x) {
     $('#Janimate').removeClass().addClass(x + ' show-demo').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
       $(this).removeClass(x);
     });
+    $('#Jselectname').val(x);
   };
+  // testAnim('bounce');
+
   function scrollTo(name, add, speed) {//基于jq，根据dom元素的缓动锚点效果
     if (!speed) speed = 300
     if (!name) {
@@ -343,19 +345,20 @@ body, .usertext {
         }
     }
   }
-
-  $(document).ready(function(){
-    $('.select-btn').click(function(e){
-      e.preventDefault();
-      var anim = $('#Jselect').val();
-      testAnim(anim);
-    });
-
-    $('#Jselect').change(function(){
-      var anim = $(this).val();
-      testAnim(anim);
-    });
+  // console.log()
+  $('.select-btn').click(function(e){
+    e.preventDefault();
+    var anim = $('#Jselect').val();
+    testAnim(anim);
   });
+  $('#Jselect').change(function(){
+    var anim = $(this).val();
+    testAnim(anim);
+  });
+  $('#Jselectname').bind('mouseover',function(){
+    // console.log($(this).val());
+    $(this).select();
+  })
   $('.nav-a a').bind('click',function(){
     setTimeout(function(){
       if( location.hash ){
