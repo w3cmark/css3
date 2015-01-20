@@ -16,6 +16,7 @@
       <a href="#0">效果预览</a>
       <a href="#1">LESS-Prefixer</a>
       <a href="#2">LESS-animation</a>
+      <a href="#3">更新日志</a>
     </div>
   </div>
 	<div class='header'>
@@ -95,8 +96,10 @@
             </optgroup>
 
             <optgroup label="Lightspeed">
-              <option value="lightSpeedIn">lightSpeedIn</option>
-              <option value="lightSpeedOut">lightSpeedOut</option>
+              <option value="lightSpeedInLeft">lightSpeedInLeft</option>
+              <option value="lightSpeedInRight">lightSpeedInRight</option>
+              <option value="lightSpeedOutLeft">lightSpeedOutLeft</option>
+              <option value="lightSpeedOutRight">lightSpeedOutRight</option>
             </optgroup>
 
             <optgroup label="Rotating Entrances">
@@ -153,33 +156,13 @@
           </select>
           <a class="select-btn" href="javascript:;">Animate it</a>
 			</div>
-<!-- 			<h3>代码</h3>
-			<div class="code">
-					CSS
-					<pre>
-<code class="css">@font-face {
-  font-family: Chunkfive; src: url('Chunkfive.otf');
-}
-
-body, .usertext {
-  color: #F0F0F0; background: #600;
-  font-family: Chunkfive, sans;
-}
-
-@import url(print.css);
-@media print {
-  a[href^=http]::after {
-    content: attr(href)
-  }
-}
-</code></pre>
-			</div> -->
       
       <h2>LESS动画优点</h2>
       <p><span class="s_icon">·</span> 快速开发css3动画</p>
       <p><span class="s_icon">·</span> 采用less mixins写法，不会生成冗余css</p>
       <p><span class="s_icon">·</span> 已加入主流浏览器前缀，保证最大兼容性</p>
-      <p>（PS：sublime的less2css插件可能不支持编译本库的一些新写法，建议使用官方less编译、考拉、前端构建工具等方式编译）</p>
+      <p><span class="s_icon">·</span> LESS-animation mixins支持传参，自定义动画幅度</p>
+      <p class="p-tips">（PS：sublime的less2css插件可能不支持编译本库的一些新写法，建议使用官方less编译、考拉、前端构建工具等方式编译）</p>
       
       <h2>使用方法</h2>
       <p>本less文件主要包含两个功能：LESS-Prefixer和LESS-animation。</p>
@@ -197,7 +180,8 @@ body, .usertext {
 <code class="less">@import "_animation.less";
 </code></pre>
       </div>
-
+      
+      <!-- LESS-Prefixer -->
       <h3 id="prefixer" class="main-wrap1">LESS-Prefixer</h3>
       <!-- <h4>LESS-Prefixer</h4> -->
       <p>LESS-Prefixer是一组LESS mixins，可以让你在写css3时，去掉书写各个浏览器的前缀，简化代码书写。</p>
@@ -290,8 +274,11 @@ body, .usertext {
         <dd class="-dd">.linear-gradient-left(@default,@color1,@stop1,@color2,@stop2,@color3,@stop3)</dd>
         <dd class="-dd">.linear-gradient-left(@default,@color1,@stop1,@color2,@stop2,@color3,@stop3,@color4,@stop4)</dd>
       </dl>
-
+      
+      <!-- LESS-animation -->
       <h3 id="animation" class="main-wrap2">LESS-animation</h3>
+      <h4>直接引用</h4>
+
       <p>LESS-animation 是一个基于less，集成一些基础动画的库（所包含的动画可以在上面效果预览），直接调用相应的动画mixins即可。</p>
       <p>动画帧名和mixin名一致，方便调用。</p>
       <p><span class="s_icon">·</span> 栗子一：引用 bounce 动画，只需在所在元素节点加入 .bounce();</p>
@@ -313,6 +300,65 @@ body, .usertext {
 }
 </code></pre>
       </div>
+
+      <h4>mixin传参数</h4>
+      <p class="p-tips">
+        ps：<br/>
+        <span class="s_icon">·</span> 新增传参功能，可以自定义动画幅度参数，实现同类型动画不同幅度；<br/>
+        <span class="s_icon">·</span> 传参功能不影响原来上面直接引用，参数都可为空，原来的动画幅度已经设为默认值；<br/>
+      </p>
+      
+      <p>具体动画名和参数说明</p>
+      <table class="name-table" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr class="-tr">
+          <th width="15%">动画名</th>
+          <th width="50%">参数说明</th>
+          <th width="35%">栗子</th>
+        </tr>
+        <tr class="-tr">
+          <td>.bounce(@t; @n)</td>
+          <td>@t：抖动最小幅度（默认值4px）；@n：动画帧名（默认值bounce）</td>
+          <td>.bounce(5px; bounceA);</td>
+        </tr>
+        <tr class="-tr">
+          <td>.pulse(@t; @n)</td>
+          <td>@t：放大幅度（默认值1.05）；@n：动画帧名（默认值pulse）</td>
+          <td>.pulse(1.5; pulseA);</td>
+        </tr>
+        <tr class="-tr">
+          <td>.shake(@x; @n)</td>
+          <td>@x：抖动最小幅度（默认值10px）；@n：动画帧名（默认值shake）</td>
+          <td>.shake(20px; shakeA);</td>
+        </tr>
+        <tr class="-tr">
+          <td>.swing(@d; @n)</td>
+          <td>@d：旋转最小角度（默认值5deg）；@n：动画帧名（默认值swing）</td>
+          <td>.swing(5deg; swingA);</td>
+        </tr>
+        <tr class="-tr">
+          <td>.wobble(@d; @n)</td>
+          <td>@d：摇摆最小幅度（默认值1deg）；@n：动画帧名（默认值wobble）</td>
+          <td>.wobble(2deg; wobbleA);</td>
+        </tr>
+        <tr class="-tr">
+          <td>.fadeIn(@x; @y; @n)</td>
+          <td>@x：x轴移动距离（默认值0）；@y：y轴移动距离（默认值0）；@n：动画帧名（默认值fadeIn）</td>
+          <td>.fadeIn(-1000px; 0; fadeInA);</td>
+        </tr>
+        <tr class="-tr">
+          <td>.fadeOut(@x; @y; @n)</td>
+          <td>@x：x轴移动距离（默认值0）；@y：y轴移动距离（默认值0）；@n：动画帧名（默认值fadeOut）</td>
+          <td>.fadeOut(-1000px; 0; fadeOutA);</td>
+        </tr>
+      </table>
+
+
+      <!-- 更新日志 -->
+      <h3 id="animation" class="main-wrap3">更新日志</h3>
+
+      <p><span class="s_icon">·</span> 20150110增加turn Entrances（出现）和turn Exits（消失）系列动画</p>
+
+      <p><span class="s_icon">·</span> 20150120新增动画animation的mixin支持传参</p>
 
       <p class="cankao">参考：https://github.com/daneden/animate.css</p>
 		

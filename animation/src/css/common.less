@@ -82,8 +82,8 @@
 	margin:0 auto;
 	overflow: hidden;
 	padding:0 20px 15px;
-	.fadeInUp(100px;fadeInUpA);
-	.animation(fadeInUpA .8s 0s ease-in-out both);
+	.fadeIn(0;100px;fadeInA);
+	.animation(fadeInA .8s 0s ease-in-out both);
 	h3{
 		height: 40px;
 		line-height: 40px;
@@ -93,7 +93,7 @@
 		padding-left: 20px;
 		margin: 30px 0;
 		font-weight:normal;
-		color:#999;
+		color:#666;
 	}
 	h2{
 		font-size:20px;
@@ -103,12 +103,12 @@
 		margin-top:30px;
 	}
 	h4{
-		font-size:16px;
+		font-size:18px;
 		margin:20px 10px 10px;
 	}
 	p{
 		line-height:24px;
-		font-size:14px;
+		font-size:16px;
 		margin:10px;
 		.s_icon{
 			font-size:16px;
@@ -116,7 +116,12 @@
 		}
 		&.cankao{
 			color:#999;
-			font-size:12px;
+			font-size:14px;
+			margin-top:20px;
+		}
+		&.p-tips{
+			color:#999;
+			font-size:14px;
 			margin-top:20px;
 		}
 	}
@@ -233,6 +238,29 @@
 	}
 	optgroup{
 		background:#f2f2f2;
+	}
+}
+.name-table{
+	font-size:16px;
+	border-left:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	tr{
+		height:35px;
+		th{
+			text-align: center;
+			border-top:1px solid #ccc;
+			border-right:1px solid #ccc;
+		}
+		td{
+			border-top:1px solid #ccc;
+			border-right:1px solid #ccc;
+			padding:0 10px;
+			font-size:14px;
+			font-family: "宋体";
+			&.td3{
+				text-align: center;
+			}
+		}
 	}
 }
 .footer{text-align: center;color:#ccc;height:40px;line-height: 40px;margin-top: 20px;font-size:14px;}
@@ -404,15 +432,24 @@
 	.flipOutY();
 	.animation(flipOutY 1s ease-in-out);
 }
-.lightSpeedIn{
-	.lightSpeedIn();
-	.animation(lightSpeedIn 1s ease-in-out);
+
+.lightSpeedInLeft{
+	.lightSpeedInLeft();
+	.animation(lightSpeedInLeft 1s ease-in-out);
+}
+.lightSpeedInRight{
+	.lightSpeedInRight();
+	.animation(lightSpeedInRight 1s ease-in-out);
+}
+.lightSpeedOutLeft{
+	.lightSpeedOutLeft();
+	.animation(lightSpeedOutLeft 1s ease-in-out);
+}
+.lightSpeedOutRight{
+	.lightSpeedOutRight();
+	.animation(lightSpeedOutRight 1s ease-in-out);
 }
 
-.lightSpeedOut{
-	.lightSpeedOut();
-	.animation(lightSpeedOut 1s ease-in-out);
-}
 .rotateIn{
 	.rotateIn();
 	.animation(rotateIn 1s ease-in-out);
