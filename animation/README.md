@@ -10,7 +10,7 @@
 
 + LESS-Animation 部分mixins支持传参，自定义动画幅度
 
-> （PS：sublime的less2css插件可能不支持编译本库的一些新写法，建议使用官方less编译、考拉、前端构建工具等方式编译）
+> （PS：sublime的less2css插件可能不支持编译本库的一些新写法，建议使用官方less编译、考拉、前端构建工具等方式编译。交流群：145423956）
 
 ## 使用方法
 
@@ -192,7 +192,7 @@ ps：
 
 ## 效果预览
 
-+ http://w3cmark.github.io/animation/
++ http://www.w3cmark.com/animation/
 
 
 
