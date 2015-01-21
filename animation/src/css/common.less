@@ -256,9 +256,12 @@
 			border-right:1px solid #ccc;
 			padding:0 10px;
 			font-size:14px;
-			font-family: "宋体";
+			color:#999;
 			&.td3{
 				text-align: center;
+			}
+			&:first-child{
+				color:#333;
 			}
 		}
 	}
@@ -280,6 +283,7 @@
 	.pulse();
 	.animation(pulse 1s ease-in-out);
 }
+
 .rubberBand{
 	.rubberBand();
 	.animation(rubberBand 1s ease-in-out);
@@ -296,10 +300,25 @@
 	.tada();
 	.animation(tada 1s ease-in-out);
 }
+
+//Wobbles
 .wobble{
 	.wobble();
 	.animation(wobble 1s ease-in-out);
 }
+.wobbleTop{
+	.wobbleTop();
+	.animation(wobbleTop 1s ease-in-out);
+}
+.wobbleBottom{
+	.wobbleBottom();
+	.animation(wobbleBottom 1s ease-in-out);
+}
+.wobbleSkew{
+	.wobbleSkew();
+	.animation(wobbleSkew 1s ease-in-out);
+}
+//bounce
 .bounceIn{
 	.bounceIn();
 	.animation(bounceIn 1s ease-in-out);
@@ -412,6 +431,7 @@
 	.fadeOutUpBig();
 	.animation(fadeOutUpBig 1s ease-in-out);
 }
+// flip
 .flip{
 	.flip();
 	.animation(flip 1s ease-in-out);
@@ -431,6 +451,31 @@
 .flipOutY{
 	.flipOutY();
 	.animation(flipOutY 1s ease-in-out);
+}
+//Scales
+.scaleIn{
+	.scaleIn();
+	.animation(scaleIn 1s ease-in-out);
+}
+.scaleInX{
+	.scaleInX();
+	.animation(scaleInX 1s ease-in-out);
+}
+.scaleInY{
+	.scaleInY();
+	.animation(scaleInY 1s ease-in-out);
+}
+.scaleOut{
+	.scaleOutX();
+	.animation(scaleOut 1s ease-in-out);
+}
+.scaleOutX{
+	.scaleOutX();
+	.animation(scaleOutX 1s ease-in-out);
+}
+.scaleOutY{
+	.scaleOutY();
+	.animation(scaleOutY 1s ease-in-out);
 }
 
 .lightSpeedInLeft{
@@ -490,17 +535,30 @@
 	.rotateOutUpRight();
 	.animation(rotateOutUpRight 1s ease-in-out);
 }
-.hinge{
-	.hinge();
-	.animation(hinge 1s ease-in-out);
+
+.hingeLeft{
+	.hingeLeft();
+	.animation(hingeLeft 1s ease-in-out);
 }
-.rollIn{
-	.rollIn();
-	.animation(rollIn 1s ease-in-out);
+.hingeRight{
+	.hingeRight();
+	.animation(hingeRight 1s ease-in-out);
 }
-.rollOut{
-	.rollOut();
-	.animation(rollOut 1s ease-in-out);
+.rollInLeft{
+	.rollInLeft();
+	.animation(rollInLeft 1s ease-in-out);
+}
+.rollInRight{
+	.rollInRight();
+	.animation(rollInRight 1s ease-in-out);
+}
+.rollOutLeft{
+	.rollOutLeft();
+	.animation(rollOutLeft 1s ease-in-out);
+}
+.rollOutRight{
+	.rollOutRight();
+	.animation(rollOutRight 1s ease-in-out);
 }
 .zoomIn{
 	.zoomIn();
