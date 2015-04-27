@@ -95,14 +95,30 @@
 
 //flex
 .flex(@arg){
-    .pre(flex,@arg);
+    -moz-box-flex: @arg;
+    -webkit-box-flex: @arg;
+    -o-box-flex: @arg;
+    -ms-flex: @arg;
+    flex: @arg;
 }
 .flexbox(){
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -o-flex;
-    display: -ms-flex;
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-flexbox;
+    display: flexbox;
+}
+//垂直居中
+.horizontal(){
+    display:-webkit-box;
+    display:-moz-box;
+    display:-o-box;
+    display:-ms-box;
+    display:box;
+    // .diplaybox(box);
+    .pre(box-orient,horizontal);
+    .pre(box-align,center);
+    .pre(box-pack,center);
 }
 //opacity
 .opacity(@number){
