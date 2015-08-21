@@ -1821,3 +1821,27 @@
         }
     }
 }
+
+// 箭头动画
+.aniArrowDown(@y:0.4rem;@n:aniArrowDown){
+    .keyframes(@n);
+    .-frames(@-...){
+        0% {
+            @{-}transform:translateY(-@y);
+        }
+        100% {
+            @{-}transform:translateY(@y);
+        }
+    }
+}
+.aniArrowLeft(@x:0.4rem;@n:aniArrowLeft){
+    .keyframes(@n);
+    .-frames(@-...){
+        0% {
+            @{-}transform:translateX(-@x);
+        }
+        100% {
+            @{-}transform:translateX(@x);
+        }
+    }
+}
