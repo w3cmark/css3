@@ -95,16 +95,17 @@
 
 //flex
 .flex(@arg){
-    -moz-box-flex: @arg;
-    -webkit-box-flex: @arg;
-    -o-box-flex: @arg;
+    -moz-flex: @arg;
+    -webkit-flex: @arg;
+    -o-flex: @arg;
     -ms-flex: @arg;
     flex: @arg;
 }
 .flexbox(){
-    display: -webkit-box;
-    display: -moz-box;
-    display: -o-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
     display: -ms-flexbox;
     display: flex;
 }
